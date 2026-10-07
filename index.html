@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#10131d">
+    <meta name="description" content="Explore the planets of our solar system, from the rocky worlds to the distant ice giants.">
+    <title>Solar System — A field guide to our planets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#planet-details">Skip to planet details</a>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Solar System home">
+        <span class="wordmark-mark" aria-hidden="true"><span></span></span>
+        <span>SOLAR<span class="wordmark-light">SYSTEM</span></span>
+      </a>
+      <p class="header-note">A FIELD GUIDE TO OUR NEIGHBOURHOOD</p>
+      <button class="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
+        <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+        <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.6A8.6 8.6 0 0 1 8.4 3.8 8.8 8.8 0 1 0 20.2 15.6Z"></path></svg>
+        <span class="theme-label">LIGHT MODE</span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> OUR SOLAR SYSTEM <span class="eyebrow-separator">/</span> 8 PLANETS</p>
+          <h1 id="page-title">Worlds within<br><em>our reach.</em></h1>
+        </div>
+        <p class="intro-copy">One star. Eight planets. Countless stories.<br>Choose a world to begin exploring.</p>
+      </section>
+
+      <section class="explorer" aria-label="Explore the planets">
+        <nav class="planet-nav" aria-label="Choose a planet">
+          <div class="nav-heading">
+            <span class="eyebrow">THE PLANETS</span>
+            <span class="planet-count" id="planet-count">— / 08</span>
+          </div>
+          <ol class="planet-list" id="planet-list" aria-live="polite">
+            <li class="loading-note">Mapping the solar system…</li>
+          </ol>
+          <p class="nav-footnote"><span class="status-dot" aria-hidden="true"></span><span id="data-status">Connecting to the planet archive</span></p>
+        </nav>
+
+        <article class="planet-panel" id="planet-details" aria-live="polite" aria-busy="true">
+          <div class="planet-topline">
+            <p class="eyebrow" id="planet-position">PLANET 01 <span class="eyebrow-separator">/</span> TERRESTRIAL</p>
+            <span class="distance-label"><span class="distance-icon" aria-hidden="true">↗</span><span id="distance-value">—</span><span class="distance-unit">FROM THE SUN</span></span>
+          </div>
+
+          <div class="planet-hero">
+            <div class="planet-copy">
+              <p class="planet-kicker" id="planet-kicker">THE BLUE PLANET</p>
+              <h2 id="planet-name">Earth</h2>
+              <p class="planet-description" id="planet-description">Our home in the cosmos.</p>
+            </div>
+            <figure class="planet-visual" id="planet-visual" data-planet="earth">
+              <div class="orbit orbit-one" aria-hidden="true"></div>
+              <div class="orbit orbit-two" aria-hidden="true"></div>
+              <div class="planet-glow" aria-hidden="true"></div>
+              <div class="planet-rings" aria-hidden="true"></div>
+              <div class="planet-fallback" aria-hidden="true"></div>
+              <img class="planet-image" id="planet-image" alt="" hidden>
+              <figcaption class="visually-hidden" id="planet-image-caption">Illustration of Earth</figcaption>
+              <span class="visual-index" id="visual-index">03</span>
+            </figure>
+          </div>
+
+          <section class="facts" aria-labelledby="facts-heading">
+            <div class="section-heading">
+              <h3 id="facts-heading">At a glance</h3>
+              <span>PLANETARY DATA</span>
+            </div>
+            <dl class="fact-grid">
+              <div class="fact"><dt>Type</dt><dd id="fact-type">—</dd></div>
+              <div class="fact"><dt>Mass</dt><dd id="fact-mass">—</dd></div>
+              <div class="fact"><dt>Diameter</dt><dd id="fact-diameter">—</dd></div>
+              <div class="fact"><dt>Orbital period</dt><dd id="fact-period">—</dd></div>
+              <div class="fact"><dt>Temperature</dt><dd id="fact-temperature">—</dd></div>
+              <div class="fact"><dt>Gravity</dt><dd id="fact-gravity">—</dd></div>
+              <div class="fact fact-moons"><dt>Known moons</dt><dd id="fact-moons">—</dd></div>
+            </dl>
+          </section>
+
+          <footer class="panel-footer">
+            <span>MEASUREMENTS ARE APPROXIMATE</span>
+            <span class="footer-rule" aria-hidden="true"></span>
+            <span>NASA / SOLAR SYSTEM EXPLORATION</span>
+          </footer>
+        </article>
+      </section>
+
+      <section class="about" aria-labelledby="about-heading">
+        <p class="eyebrow"><span class="eyebrow-line"></span> ABOUT THIS PROJECT</p>
+        <h2 id="about-heading">Curiosity, <em>in orbit.</em></h2>
+        <p>A little independent project from a one-person team with a big interest in the worlds beyond our own. Built to make exploring space feel a little closer.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark footer-wordmark" href="#top">
+        <span class="wordmark-mark" aria-hidden="true"><span></span></span>
+        <span>SOLAR<span class="wordmark-light">SYSTEM</span></span>
+      </a>
+      <p>Made with curiosity by <a href="https://github.com/10abdulsalam/solar-explorer" target="_blank" rel="noopener noreferrer">Abdulsalam Jamiu</a></p>
+      <nav aria-label="Project links">
+        <a href="https://tsacademyonline.com/" target="_blank" rel="noopener noreferrer">TS Academy <span aria-hidden="true">↗</span></a>
+      </nav>
+    </footer>
+  </body>
+</html>
